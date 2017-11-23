@@ -13,9 +13,15 @@ public class InitalScreenController implements Controller {
     @FXML
     private Button loginButton;
 
-    public void onLogin() {
+    @FXML
+    private Button registerButton;
 
+    public void onLogin() {
         Navigation.getInstance().loadScreen("loginscreen");
+    }
+
+    public void onRegister(){
+        Navigation.getInstance().loadScreen("createprofile");
     }
 }
 

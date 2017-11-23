@@ -12,6 +12,7 @@
             <Image url="@../../../../../../resources/jesuslogin.png" />
          </image>
       </ImageView>
-      <Button fx:id="loginButton" layoutX="204.0" layoutY="417.0" mnemonicParsing="false" onAction="#onLogin" text="Let's Go!" />
+      <Button fx:id="loginButton" layoutX="93.0" layoutY="376.0" mnemonicParsing="false" onAction="#onLogin" text="Login" />
+      <Button fx:id="registerButton" layoutX="341.0" layoutY="427.0" mnemonicParsing="false" onAction="#onRegister" text="Register" />
    </children>
 </Pane>
