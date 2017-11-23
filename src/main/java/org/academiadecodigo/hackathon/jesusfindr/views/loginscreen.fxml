@@ -18,7 +18,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="480.0">
          <image>
-            <Image url="@/loginimage.png" />
+            <Image url="@../../../../../../resources/loginimage.png" />
          </image>
       </ImageView>
       <VBox alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="480.0" spacing="20.0">
