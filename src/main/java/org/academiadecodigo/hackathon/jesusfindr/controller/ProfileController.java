@@ -2,8 +2,6 @@ package org.academiadecodigo.hackathon.jesusfindr.controller;
 
 import org.academiadecodigo.hackathon.jesusfindr.Navigation;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -14,12 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 public class ProfileController implements Controller {
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private TextField usernameField;
@@ -49,13 +41,7 @@ public class ProfileController implements Controller {
     private RadioButton backHairYes;
 
     @FXML
-    private ToggleGroup Backhair;
-
-    @FXML
     private RadioButton backHairNo;
-
-    @FXML
-    private Label infoLabel;
 
     @FXML
     private Button registerButton;
@@ -65,9 +51,23 @@ public class ProfileController implements Controller {
 
     @FXML
     void registerUser(ActionEvent event) {
-        //client.sendMessage("");
-        //client.sendMessage();
-        //client.sendMessage();
-        //client.sendMessage();
+        /*
+        client.sendMessage("username#" + usernameField);
+        client.sendMessage("password#" + passwordField);
+        client.sendMessage("age#" + ageField);
+        client.sendMessage("sex#" + sexList);
+        client.sendMessage("shoe_size#" + shoeSizeList);
+        client.sendMessage("bellybutton#" + bellyList);
+        client.sendMessage("spirit_animal#" + spiritAnimalField);
+        client.sendMessage("brows_type#" + browsList);
+        if (backHairYes.isSelected()) {
+
+            client.sendMessage("back_hair#yes");
+        } else {
+            client.sendMessage("back_hair#no");
+        }
+        */
+
+        Navigation.getInstance().loadScreen("matches");
     }
 }
