@@ -5,15 +5,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane fx:id="welcomeView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+<Pane fx:id="welcomeView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.jesusfindr.controller.InitalScreenController">
    <children>
       <ImageView fitHeight="611.0" fitWidth="488.0">
          <image>
-            <Image url="@/jesuslogin.png" />
+            <Image url="@../../../../../../resources/jesuslogin.png" />
          </image>
       </ImageView>
-      <Button fx:id="loginButton" layoutX="91.0" layoutY="371.0" mnemonicParsing="false" text="Login" />
-      <Button fx:id="registerButton" layoutX="323.0" layoutY="423.0" mnemonicParsing="false" text="Register" />
+      <Button fx:id="loginButton" layoutX="204.0" layoutY="417.0" mnemonicParsing="false" onAction="#onLogin" text="Let's Go!" />
    </children>
 </Pane>
