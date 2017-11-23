@@ -1,4 +1,4 @@
-package org.academiadecodigo.jesusfindr;
+package org.academiadecodigo.hackathon.jesusfindr;
 
 /**
  * MIT License

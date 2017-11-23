@@ -204,7 +204,7 @@ proguard/
 
 # Log Files
 
-# Android Studio org.academiadecodigo.jesusfindr.Navigation editor temp files
+# Android Studio Navigation editor temp files
 .navigation/
 
 # Android Studio captures folder

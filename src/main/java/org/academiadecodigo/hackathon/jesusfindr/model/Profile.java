@@ -1,4 +1,4 @@
-package org.academiadecodigo.jesusfindr.model;
+package org.academiadecodigo.hackathon.jesusfindr.model;
 
 public class Profile {
 }

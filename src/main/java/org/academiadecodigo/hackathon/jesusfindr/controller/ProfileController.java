@@ -1,4 +1,4 @@
 package org.academiadecodigo.hackathon.jesusfindr.controller;
 
-public interface Controller {
+public class ProfileController implements Controller {
 }

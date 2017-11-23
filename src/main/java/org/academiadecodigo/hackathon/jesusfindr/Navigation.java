@@ -1,10 +1,10 @@
-package org.academiadecodigo.jesusfindr;
+package org.academiadecodigo.hackathon.jesusfindr;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.academiadecodigo.jesusfindr.controller.Controller;
+import org.academiadecodigo.hackathon.jesusfindr.controller.Controller;
 
 import java.io.IOException;
 import java.util.HashMap;
