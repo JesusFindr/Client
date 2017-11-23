@@ -20,7 +20,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="1.0" layoutY="1.0">
          <image>
-            <Image url="@../../../../../../../../../../../Downloads/christmas-angel-herald-clipart.jpg" />
+            <Image url="@../../../../../../resources/angel.jpg" />
          </image>
       </ImageView>
       <VBox layoutX="596.0" layoutY="99.0" prefHeight="405.0" prefWidth="167.0">
