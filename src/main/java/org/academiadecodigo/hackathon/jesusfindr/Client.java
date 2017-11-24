@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Scanner;
 
 public class Client {
 
@@ -32,16 +31,13 @@ public class Client {
         } catch (IOException e) {
             System.out.println("Server is not available, try again later.");
         }
-
     }
 
     public void sendMessage(String string) {
 
         out.write(string + '\n');
         out.flush();
-
     }
-
 
     private class IncomeMessageHandler implements Runnable {
 
@@ -66,7 +62,6 @@ public class Client {
 
                 System.out.println(receivedString);
             }
-
         }
     }
 }

@@ -5,7 +5,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.academiadecodigo.hackathon.jesusfindr.controller.Controller;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
