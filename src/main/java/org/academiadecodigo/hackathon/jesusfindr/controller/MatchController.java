@@ -2,60 +2,63 @@ package org.academiadecodigo.hackathon.jesusfindr.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import org.academiadecodigo.hackathon.jesusfindr.Navigation;
 
 
-public class MatchController implements Controller{
+public class MatchController implements Controller {
 
-        @FXML
-        private ResourceBundle resources;
+    @FXML
+    private ResourceBundle resources;
 
-        @FXML
-        private URL location;
+    @FXML
+    private URL location;
 
-        @FXML
-        private ImageView avatarLoader;
+    @FXML
+    private ImageView avatarLoader;
 
-        @FXML
-        private Label usernameShow;
+    @FXML
+    private Label usernameShow;
 
-        @FXML
-        private Label ageShow;
+    @FXML
+    private Label ageShow;
 
-        @FXML
-        private Label sexShow;
+    @FXML
+    private Label sexShow;
 
-        @FXML
-        private Label shoeSizeShow;
+    @FXML
+    private Label shoeSizeShow;
 
-        @FXML
-        private Label bellyButtonShow;
+    @FXML
+    private Label bellyButtonShow;
 
-        @FXML
-        private Label spiritAnimalShow;
+    @FXML
+    private Label spiritAnimalShow;
 
-        @FXML
-        private Label eyebrowShow;
+    @FXML
+    private Label eyebrowShow;
 
-        @FXML
-        private Label backHairShow;
+    @FXML
+    private Label backHairShow;
 
-        @FXML
-        private Button chatButton;
+    @FXML
+    private Button chatButton;
 
-        @FXML
-        void startChat(ActionEvent event) {
+    @FXML
+    void startChat(ActionEvent event) {
 
-        }
-
-        @FXML
-        void initialize() {
-
-        }
+        Navigation.getInstance().loadScreen("chat");
     }
+
+    @FXML
+    void initialize() {
+
+    }
+}
 
 
