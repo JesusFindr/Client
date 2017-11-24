@@ -5,14 +5,24 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="welcomeView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.jesusfindr.controller.InitalScreenController">
+<Pane fx:id="welcomeView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.jesusfindr.controller.InitalScreenController">
    <children>
-      <ImageView fitHeight="611.0" fitWidth="488.0">
+      <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@../../../../../../resources/jesuslogin.png" />
+            <Image url="@../../../../../../resources/jesusInitialScreen.jpeg" />
          </image>
       </ImageView>
-      <Button fx:id="loginButton" layoutX="93.0" layoutY="376.0" mnemonicParsing="false" onAction="#onLogin" text="Login" />
-      <Button fx:id="registerButton" layoutX="341.0" layoutY="427.0" mnemonicParsing="false" onAction="#onRegister" text="Register" />
+      <ImageView fitHeight="96.0" fitWidth="285.0" layoutX="512.0">
+         <image>
+            <Image url="@../../../../../../resources/logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="266.0" layoutX="522.0" layoutY="96.0">
+         <image>
+            <Image url="@../../../../../../resources/logo2.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="loginButton" layoutX="605.0" layoutY="287.0" mnemonicParsing="false" onAction="#onLogin" text="Login" />
+      <Button fx:id="registerButton" layoutX="597.0" layoutY="332.0" mnemonicParsing="false" onAction="#onRegister" text="Register" />
    </children>
 </Pane>
