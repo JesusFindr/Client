@@ -1,5 +1,6 @@
 package org.academiadecodigo.hackathon.jesusfindr.controller;
 
+import org.academiadecodigo.hackathon.jesusfindr.Client;
 import org.academiadecodigo.hackathon.jesusfindr.Navigation;
 
 import javafx.event.ActionEvent;
@@ -12,6 +13,12 @@ import javafx.scene.control.TextField;
 import org.academiadecodigo.hackathon.jesusfindr.Security;
 
 public class ProfileController implements Controller {
+
+    private Client client;
+
+    public ProfileController(){
+        client = new Client();
+    }
 
     @FXML
     private TextField usernameField;
@@ -52,22 +59,17 @@ public class ProfileController implements Controller {
     @FXML
     void registerUser(ActionEvent event) {
 
-        /*
-        client.sendMessage("username#" + usernameField);
-        client.sendMessage("password#" + Security.getHash(passwordField.getText()));
-        client.sendMessage("age#" + ageField);
-        client.sendMessage("sex#" + sexList);
-        client.sendMessage("shoe_size#" + shoeSizeList);
-        client.sendMessage("bellybutton#" + bellyList);
-        client.sendMessage("spirit_animal#" + spiritAnimalField);
-        client.sendMessage("brows_type#" + browsList);
-        if (backHairYes.isSelected()) {
+        String backHair = "yes";
 
-            client.sendMessage("back_hair#yes");
-        } else {
-            client.sendMessage("back_hair#no");
+        if (backHairNo.isSelected()){
+            backHair = "no";
         }
-        */
+
+        String message = "register#€" + usernameField + "#€" + (Security.getHash(passwordField.getText())) + "#€" + ageField +
+                "#€" + sexList + "#€" + shoeSizeList + "#€" + bellyList + "#€" + spiritAnimalField +
+                "#€" + browsList + "#€" + backHair;
+
+        client.sendMessage(message);
 
         if (emptyFields()){
             errorLabel.setVisible(true);
