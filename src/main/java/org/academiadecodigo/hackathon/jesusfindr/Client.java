@@ -98,7 +98,7 @@ public final class Client {
                 }
 
             } catch (IOException e) {
-                System.out.println("socket closed");
+                // socket closed
             } finally {
                 shutdown();
             }
