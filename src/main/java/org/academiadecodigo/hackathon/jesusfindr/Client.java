@@ -97,7 +97,7 @@ public final class Client {
 
         if (!string.contains("#€") && controller instanceof ChatController){
             Platform.runLater(() -> {
-                ((ChatController) controller).getChatWindow().appendText(string);
+                ((ChatController) controller).getChatWindow().appendText(string + "\n");
             });
         }
 
