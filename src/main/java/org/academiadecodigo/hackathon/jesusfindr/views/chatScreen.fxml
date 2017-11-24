@@ -18,13 +18,13 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@../../../../../../../../../../../Downloads/JesusFindr/sky.png" />
+            <Image url="@../../../../../../resources/sky.png" />
          </image>
       </ImageView>
       <ImageView fx:id="avatarShow" fitHeight="150.0" fitWidth="200.0" layoutX="101.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="115.0" fitWidth="183.0" layoutX="309.0" layoutY="185.0">
          <image>
-            <Image url="@../../../../../../../../../../../Downloads/JesusFindr/hi.ong.png" />
+            <Image url="@../../../../../../resources/hi.ong.png" />
          </image>
       </ImageView>
       <ScrollPane layoutX="504.0" layoutY="172.0" prefHeight="256.0" prefWidth="244.0">
