@@ -2,20 +2,21 @@ package org.academiadecodigo.hackathon.jesusfindr.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
 import javafx.event.ActionEvent;
+import javafx.scene.image.ImageView;
+import org.academiadecodigo.hackathon.jesusfindr.Client;
 import org.academiadecodigo.hackathon.jesusfindr.Navigation;
 
 public class LoginController implements Controller {
 
-    @FXML
-    private GridPane gridPane;
+    private Client client;
+
+    public LoginController() {
+        client = new Client();
+    }
 
     @FXML
-    private Hyperlink register;
-
-    @FXML
-    private Label errorLabel;
+    private ImageView errorLogo;
 
     @FXML
     private TextField usernameField;
@@ -27,9 +28,30 @@ public class LoginController implements Controller {
     private Button loginButton;
 
     @FXML
-    void onButton(ActionEvent event) {
-        //client.sendMessage(usernameField + "$€" + passwordField);
-        //if (client.authenticate()){}
+    private Button registerButton;
+
+    @FXML
+    void onLogin(ActionEvent event) {
+
+        if (emptyFields()) {
+            errorLogo.setVisible(true);
+            return;
+        }
+
+        client.sendMessage(usernameField + "$€" + passwordField);
+    }
+
+    @FXML
+    void onRegister(ActionEvent event) {
+
+        Navigation.getInstance().loadScreen("createprofile");
+    }
+
+    void loadMatches() {
         Navigation.getInstance().loadScreen("matches");
+    }
+
+    boolean emptyFields() {
+        return usernameField.getText().length() == 0 || passwordField.getText().length() == 0;
     }
 }

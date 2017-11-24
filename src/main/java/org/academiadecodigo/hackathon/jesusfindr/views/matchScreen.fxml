@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.jesusfindr.controller.MatchController">
+   <children>
+      <ImageView fitHeight="96.0" fitWidth="285.0" layoutX="512.0">
+         <image>
+            <Image url="@../../../../../../resources/logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="350.0" layoutX="225.0" layoutY="96.0">
+         <image>
+            <Image url="@../../../../../../resources/logoMatch.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="avatarLoader" fitHeight="138.0" fitWidth="200.0" layoutX="300.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="130.0" fitWidth="200.0" layoutX="575.0" layoutY="155.0">
+         <image>
+            <Image url="@../../../../../../resources/jesusApproves.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="202.0" fitWidth="720.0" layoutX="40.0" layoutY="319.0">
+         <image>
+            <Image url="@../../../../../../resources/hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="25.0" layoutY="55.0">
+         <image>
+            <Image url="@../../../../../../resources/hearts2.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="205.0" layoutY="300.0" prefHeight="239.0" prefWidth="390.0">
+         <children>
+            <GridPane prefHeight="239.0" prefWidth="334.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Username" />
+                  <Label text="Age" GridPane.rowIndex="1" />
+                  <Label text="Sex" GridPane.rowIndex="2" />
+                  <Label text="Shoe Size" GridPane.rowIndex="3" />
+                  <Label text="Belly Button" GridPane.rowIndex="4" />
+                  <Label text="Spirit Animal" GridPane.rowIndex="5" />
+                  <Label text="Eye Brows" GridPane.rowIndex="6" />
+                  <Label text="Back Hair" GridPane.rowIndex="7" />
+                  <Label fx:id="usernameShow" GridPane.columnIndex="1" />
+                  <Label fx:id="ageShow" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="sexShow" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="shoeSizeShow" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="bellyButtonShow" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="spiritAnimalShow" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="eyebrowShow" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label fx:id="backHairShow" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <Button fx:id="chatButton" layoutX="333.0" layoutY="559.0" mnemonicParsing="false" onAction="#startChat" text="Start conversation!" />
+   </children>
+</Pane>
