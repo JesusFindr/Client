@@ -32,7 +32,7 @@ public final class Client {
 
     public void start() {
 
-        String hostName = "localhost";
+        String hostName = "192.168.1.18";
 
         int portNumber = 9090;
 
