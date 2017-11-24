@@ -1,4 +1,6 @@
-package org.academiadecodigo.hackathon.jesusfindr;/**
+package org.academiadecodigo.hackathon.jesusfindr;
+
+/**
  * Created by codecadet on 24/11/17.
  */
 
@@ -18,5 +20,10 @@ public class ClientUI extends Application {
         Navigation.getInstance().loadScreen("initialscreen");
         Client.getInstance().start();
 
+    }
+
+    @Override
+    public void stop() throws Exception {
+        Client.getInstance().shutdown();
     }
 }

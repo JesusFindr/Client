@@ -17,6 +17,7 @@ public final class Client {
     public static Client client = null;
     private PrintWriter out;
     private Controller controller;
+    private Socket clientSocket;
 
     private Client() {
     }
@@ -38,7 +39,7 @@ public final class Client {
 
         try {
 
-            Socket clientSocket = new Socket(hostName, portNumber);
+            clientSocket = new Socket(hostName, portNumber);
 
             out = new PrintWriter(clientSocket.getOutputStream(), true);
 
@@ -60,6 +61,15 @@ public final class Client {
 
     public void setController(Controller controller) {
         this.controller = controller;
+    }
+
+    public void shutdown() {
+        try {
+            clientSocket.shutdownInput();
+            clientSocket.close();
+        } catch (IOException e) {
+            // socket closed
+        }
     }
 
     private class IncomeMessageHandler implements Runnable {
@@ -88,7 +98,9 @@ public final class Client {
                 }
 
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("socket closed");
+            } finally {
+                shutdown();
             }
         }
     }
