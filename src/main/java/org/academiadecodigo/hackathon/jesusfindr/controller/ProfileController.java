@@ -1,6 +1,7 @@
 package org.academiadecodigo.hackathon.jesusfindr.controller;
 
-import javafx.scene.Group;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.image.ImageView;
 import org.academiadecodigo.hackathon.jesusfindr.Client;
 import org.academiadecodigo.hackathon.jesusfindr.Navigation;
@@ -125,7 +126,7 @@ public class ProfileController implements Controller {
 
         client.sendMessage(message);
 
-        Navigation.getInstance().loadScreen("matchscreen");
+//        Navigation.getInstance().loadScreen("matchscreen");
         playSound("/sounds/matchSound.wav");
     }
 
