@@ -1,5 +1,7 @@
 package org.academiadecodigo.hackathon.jesusfindr.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.academiadecodigo.hackathon.jesusfindr.Client;
 import org.academiadecodigo.hackathon.jesusfindr.Navigation;
 
@@ -12,14 +14,14 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import org.academiadecodigo.hackathon.jesusfindr.Security;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Observable;
+
 public class ProfileController implements Controller {
 
     private Client client;
 
-    public void initialize(){
-
-        client = Client.getInstance();
-    }
 
     @FXML
     private TextField usernameField;
@@ -31,19 +33,19 @@ public class ProfileController implements Controller {
     private TextField ageField;
 
     @FXML
-    private ChoiceBox<?> sexList;
+    private ChoiceBox<String> sexList;
 
     @FXML
-    private ChoiceBox<?> shoeSizeList;
+    private ChoiceBox<String> shoeSizeList;
 
     @FXML
-    private ChoiceBox<?> bellyList;
+    private ChoiceBox<String> bellyList;
 
     @FXML
     private TextField spiritAnimalField;
 
     @FXML
-    private ChoiceBox<?> browsList;
+    private ChoiceBox<String> browsList;
 
     @FXML
     private RadioButton backHairYes;
@@ -57,6 +59,45 @@ public class ProfileController implements Controller {
     @FXML
     private Label errorLabel;
 
+    public void initialize(){
+
+        client = Client.getInstance();
+
+        populateBellyList();
+        populateShoeList();
+        populateSexList();
+        populateBrowsList();
+
+    }
+
+    private void populateBrowsList() {
+        browsList.getItems().add("Brows?");
+        browsList.getSelectionModel().select(0);
+
+        browsList.getItems().addAll("Split brows", "Unibrow");
+    }
+
+    private void populateSexList() {
+        sexList.getItems().add("Sex?");
+        sexList.getSelectionModel().select(0);
+
+        sexList.getItems().addAll("Saint", "Once a year", "Once a week", "Once a day", "All Hackathon long!");
+    }
+
+    private void populateShoeList() {
+        shoeSizeList.getItems().add("Shoe size?");
+        shoeSizeList.getSelectionModel().select(0);
+
+        shoeSizeList.getItems().addAll("Small", "Medium", "Big");
+    }
+
+    private void populateBellyList() {
+        bellyList.getItems().add("Belly button?");
+        bellyList.getSelectionModel().select(0);
+
+        bellyList.getItems().addAll("Innie", "Outtie", "Other");
+    }
+
     @FXML
     void registerUser(ActionEvent event) {
 
@@ -65,20 +106,25 @@ public class ProfileController implements Controller {
             return;
         }
 
-        String backHair = "yes";
+        String backHair = "True";
 
         if (backHairNo.isSelected()){
-            backHair = "no";
+            backHair = "False";
         }
 
         //TODO get value selected from lists
         String message = "register#€" + usernameField.getText() + "#€" + (Security.getHash(passwordField.getText())) + "#€" +
-                ageField.getText() + "#€" + sexList + "#€" + shoeSizeList + "#€" + bellyList + "#€" + spiritAnimalField.getText() +
-                "#€" + browsList + "#€" + backHair;
+                ageField.getText() + "#€" + (sexList.getSelectionModel().getSelectedIndex()-1) + "#€" +
+                (shoeSizeList.getSelectionModel().getSelectedIndex()-1) + "#€" +
+                (bellyList.getSelectionModel().getSelectedIndex()-1) + "#€" +
+                spiritAnimalField.getText() +
+                "#€" + (browsList.getSelectionModel().getSelectedIndex()-1) + "#€" + backHair;
+
+        System.out.println(message);
 
         client.sendMessage(message);
 
-        Navigation.getInstance().loadScreen("matches");
+        Navigation.getInstance().loadScreen("matchScreen");
     }
 
     private boolean emptyFields() {
