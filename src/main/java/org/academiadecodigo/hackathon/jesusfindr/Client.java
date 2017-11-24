@@ -3,6 +3,7 @@ package org.academiadecodigo.hackathon.jesusfindr;
 import javafx.application.Platform;
 import org.academiadecodigo.hackathon.jesusfindr.controller.Controller;
 import org.academiadecodigo.hackathon.jesusfindr.controller.LoginController;
+import org.academiadecodigo.hackathon.jesusfindr.controller.MatchController;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -115,6 +116,12 @@ public final class Client {
                 public void run() {
                     Navigation.getInstance().loadScreen("matchscreen");
                 }
+            });
+        }
+
+        if (strings[0].equals("profile")) {
+            Platform.runLater(() -> {
+                ((MatchController) controller).populateProfile(strings);
             });
         }
     }
