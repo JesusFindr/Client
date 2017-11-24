@@ -119,7 +119,7 @@ public class ProfileController implements Controller {
 
         client.sendMessage(message);
 
-        Navigation.getInstance().loadScreen("matchscreen");
+//        Navigation.getInstance().loadScreen("matchscreen");
     }
 
     private boolean emptyFields() {
