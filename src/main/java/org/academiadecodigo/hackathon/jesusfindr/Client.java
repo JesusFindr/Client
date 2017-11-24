@@ -78,7 +78,6 @@ public final class Client {
             try {
                 while (true) {
                     receivedString = in.readLine();
-                    System.out.println("READ " + receivedString);
 
                     if (receivedString == null) {
 
@@ -98,14 +97,25 @@ public final class Client {
 
         String[] strings = string.split("#€");
 
-        System.out.println("HANDLER " + string);
-
         if (strings[0].equals("login") && strings[1].equals("success")) {
 
-            System.out.println("About to change view");
-
             //((LoginController) controller).loadMatches();
-            Platform.runLater(() -> Navigation.getInstance().loadScreen("matchScreen"));
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    Navigation.getInstance().loadScreen("matchScreen");
+                }
+            });
+        }
+
+        if (strings[0].equals("register") && strings[1].equals("success")) {
+
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    Navigation.getInstance().loadScreen("matchScreen");
+                }
+            });
         }
     }
 }

@@ -60,22 +60,23 @@ public class ProfileController implements Controller {
     @FXML
     void registerUser(ActionEvent event) {
 
+        if (emptyFields()){
+            errorLabel.setVisible(true);
+            return;
+        }
+
         String backHair = "yes";
 
         if (backHairNo.isSelected()){
             backHair = "no";
         }
 
-        String message = "register#€" + usernameField + "#€" + (Security.getHash(passwordField.getText())) + "#€" + ageField +
-                "#€" + sexList + "#€" + shoeSizeList + "#€" + bellyList + "#€" + spiritAnimalField +
+        //TODO get value selected from lists
+        String message = "register#€" + usernameField.getText() + "#€" + (Security.getHash(passwordField.getText())) + "#€" +
+                ageField.getText() + "#€" + sexList + "#€" + shoeSizeList + "#€" + bellyList + "#€" + spiritAnimalField.getText() +
                 "#€" + browsList + "#€" + backHair;
 
         client.sendMessage(message);
-
-        if (emptyFields()){
-            errorLabel.setVisible(true);
-            return;
-        }
 
         Navigation.getInstance().loadScreen("matches");
     }
