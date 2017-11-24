@@ -103,7 +103,7 @@ public final class Client {
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-                    Navigation.getInstance().loadScreen("matchScreen");
+                    Navigation.getInstance().loadScreen("matchscreen");
                 }
             });
         }
@@ -113,7 +113,7 @@ public final class Client {
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-                    Navigation.getInstance().loadScreen("matchScreen");
+                    Navigation.getInstance().loadScreen("matchscreen");
                 }
             });
         }
