@@ -64,10 +64,10 @@ public class ChatController implements Controller {
         if (event.getCode() == KeyCode.ENTER) {
 
             String username = ((LoginController) Navigation.getInstance().getControllers().get("loginscreen")).getUsername();
-            String message = chatWritter.getText() + "\n";
+            String message = chatWritter.getText();
 
-            Client.getInstance().sendMessage(username + ": " + message);
-            chatWindow.appendText(username + ": " + message);
+            Client.getInstance().sendMessage(message);
+            chatWindow.appendText(username + ": " + message + "\n");
             chatWritter.setText("");
         }
     }

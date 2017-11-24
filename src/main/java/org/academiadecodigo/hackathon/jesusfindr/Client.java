@@ -54,7 +54,7 @@ public final class Client {
 
     public void sendMessage(String string) {
 
-        out.write(string + '\n');
+        out.println(string);
         out.flush();
     }
 
