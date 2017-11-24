@@ -1,5 +1,8 @@
 package org.academiadecodigo.hackathon.jesusfindr.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.image.ImageView;
 import org.academiadecodigo.hackathon.jesusfindr.Client;
 import org.academiadecodigo.hackathon.jesusfindr.Navigation;
 
@@ -7,14 +10,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import org.academiadecodigo.hackathon.jesusfindr.Security;
+import org.academiadecodigo.hackathon.jesusfindr.utils.Sound;
 
 public class ProfileController implements Controller {
 
     private Client client;
+    private Sound sound;
 
     @FXML
     private TextField usernameField;
@@ -50,9 +54,9 @@ public class ProfileController implements Controller {
     private Button registerButton;
 
     @FXML
-    private Label errorLabel;
+    private ImageView errorImage;
 
-    public void initialize(){
+    public void initialize() {
 
         client = Client.getInstance();
 
@@ -95,29 +99,30 @@ public class ProfileController implements Controller {
     void registerUser(ActionEvent event) {
 
         if (emptyFields()){
-            errorLabel.setVisible(true);
+            errorImage.setVisible(true);
             return;
         }
 
         String backHair = "True";
 
-        if (backHairNo.isSelected()){
+        if (backHairNo.isSelected()) {
             backHair = "False";
         }
 
         //TODO get value selected from lists
         String message = "register#€" + usernameField.getText() + "#€" + (Security.getHash(passwordField.getText())) + "#€" +
-                ageField.getText() + "#€" + (sexList.getSelectionModel().getSelectedIndex()-1) + "#€" +
-                (shoeSizeList.getSelectionModel().getSelectedIndex()-1) + "#€" +
-                (bellyList.getSelectionModel().getSelectedIndex()-1) + "#€" +
+                ageField.getText() + "#€" + (sexList.getSelectionModel().getSelectedIndex() - 1) + "#€" +
+                (shoeSizeList.getSelectionModel().getSelectedIndex() - 1) + "#€" +
+                (bellyList.getSelectionModel().getSelectedIndex() - 1) + "#€" +
                 spiritAnimalField.getText() +
-                "#€" + (browsList.getSelectionModel().getSelectedIndex()-1) + "#€" + backHair;
+                "#€" + (browsList.getSelectionModel().getSelectedIndex() - 1) + "#€" + backHair;
 
         System.out.println(message);
 
         client.sendMessage(message);
 
-        Navigation.getInstance().loadScreen("matchscreen");
+//        Navigation.getInstance().loadScreen("matchscreen");
+        playSound("/sounds/matchSound.wav");
     }
 
     private boolean emptyFields() {
@@ -130,5 +135,18 @@ public class ProfileController implements Controller {
                 shoeSizeList.getSelectionModel().isSelected(0) ||
                 bellyList.getSelectionModel().isSelected(0) ||
                 browsList.getSelectionModel().isSelected(0);
+    }
+
+    private void playSound(String path) {
+
+        sound = new Sound(path);
+        sound.play(false);
+    }
+
+    private void stopSound() {
+
+        sound.stop();
+        sound.close();
+        System.out.println("closed sound");
     }
 }

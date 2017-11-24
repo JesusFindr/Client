@@ -7,10 +7,12 @@ import javafx.scene.image.ImageView;
 import org.academiadecodigo.hackathon.jesusfindr.Client;
 import org.academiadecodigo.hackathon.jesusfindr.Navigation;
 import org.academiadecodigo.hackathon.jesusfindr.Security;
+import org.academiadecodigo.hackathon.jesusfindr.utils.Sound;
 
 public class LoginController implements Controller {
 
     private Client client;
+    private Sound sound;
 
     public void initialize() {
 
@@ -58,5 +60,18 @@ public class LoginController implements Controller {
 
     boolean emptyFields() {
         return usernameField.getText().length() == 0 || passwordField.getText().length() == 0;
+    }
+
+    private void playSound(String path){
+
+        sound = new Sound(path);
+        sound.play(false);
+    }
+
+    private void stopSound(){
+
+        sound.stop();
+        sound.close();
+        System.out.println("closed sound");
     }
 }
