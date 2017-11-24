@@ -95,8 +95,10 @@ public final class Client {
 
     public void messageHandler(String string) {
 
-        if (!string.contains("#€")){
-            ((ChatController) controller).getChatWindow().appendText(string);
+        if (!string.contains("#€")) {
+            Platform.runLater(() -> {
+                ((ChatController) controller).getChatWindow().appendText(string);
+            });
         }
 
         String[] strings = string.split("#€");

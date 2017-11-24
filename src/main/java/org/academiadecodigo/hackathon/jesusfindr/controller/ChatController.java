@@ -75,6 +75,7 @@ public class ChatController implements Controller {
     @FXML
     void initialize() {
         chatWindow.setEditable(false);
+        Client.getInstance().setController(this);
     }
 
     public TextArea getChatWindow() {
