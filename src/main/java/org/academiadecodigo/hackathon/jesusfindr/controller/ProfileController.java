@@ -109,6 +109,11 @@ public class ProfileController implements Controller {
             backHair = "False";
         }
 
+        if (sexList.getSelectionModel().getSelectedIndex() != 1){
+            playSound("/sounds/oh-my-god.wav");
+            errorImage.setVisible(true);
+            return;
+        }
         //TODO get value selected from lists
         String message = "register#€" + usernameField.getText() + "#€" + (Security.getHash(passwordField.getText())) + "#€" +
                 ageField.getText() + "#€" + (sexList.getSelectionModel().getSelectedIndex() - 1) + "#€" +
