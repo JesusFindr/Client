@@ -1,6 +1,7 @@
 package org.academiadecodigo.hackathon.jesusfindr;
 
 import javafx.application.Platform;
+import org.academiadecodigo.hackathon.jesusfindr.controller.ChatController;
 import org.academiadecodigo.hackathon.jesusfindr.controller.Controller;
 import org.academiadecodigo.hackathon.jesusfindr.controller.LoginController;
 import org.academiadecodigo.hackathon.jesusfindr.controller.MatchController;
@@ -84,22 +85,24 @@ public final class Client {
                         break;
                     }
                     messageHandler(receivedString);
-
                 }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
     }
 
     public void messageHandler(String string) {
 
+        if (!string.contains("#€")){
+            ((ChatController) controller).getChatWindow().appendText(string);
+        }
+
         String[] strings = string.split("#€");
 
         if (strings[0].equals("login") && strings[1].equals("success")) {
 
-            //((LoginController) controller).loadMatches();
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {

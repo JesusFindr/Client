@@ -76,4 +76,8 @@ public class ChatController implements Controller {
     void initialize() {
         chatWindow.setEditable(false);
     }
+
+    public TextArea getChatWindow() {
+        return chatWindow;
+    }
 }
