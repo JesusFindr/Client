@@ -67,7 +67,6 @@
          </image>
       </ImageView>
       <Button fx:id="logoutButton" layoutX="681.0" layoutY="506.0" mnemonicParsing="false" onAction="#logout" text="Log Out" />
-      <Button fx:id="unmatchButton" layoutX="504.0" layoutY="506.0" mnemonicParsing="false" onAction="#unmatch" text="Unmatch?" />
       <TextFlow prefHeight="200.0" prefWidth="200.0" />
    </children>
 </Pane>

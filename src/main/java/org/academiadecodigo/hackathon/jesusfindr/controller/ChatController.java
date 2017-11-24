@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -45,9 +46,6 @@ public class ChatController implements Controller {
     private Button logoutButton;
 
     @FXML
-    private Button unmatchButton;
-
-    @FXML
     void logout(ActionEvent event) {
 
         Navigation.getInstance().loadScreen("initialscreen");
@@ -76,9 +74,18 @@ public class ChatController implements Controller {
     void initialize() {
         chatWindow.setEditable(false);
         Client.getInstance().setController(this);
+        Client.getInstance().sendMessage("profile#€");
     }
 
     public TextArea getChatWindow() {
         return chatWindow;
+    }
+
+    public void populateProfile(String[] profile) {
+        usernameShow.setText(profile[1]);
+        ageShow.setText(profile[2]);
+        avatarShow.setImage(new Image("/avatars/" + profile[4] + ".png"));
+        spiritAnimalShow.setText(profile[7]);
+
     }
 }

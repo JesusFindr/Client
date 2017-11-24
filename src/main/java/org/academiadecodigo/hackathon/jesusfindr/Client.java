@@ -124,9 +124,11 @@ public final class Client {
         }
 
         if (strings[0].equals("profile")) {
-            Platform.runLater(() -> {
-                ((MatchController) controller).populateProfile(strings);
-            });
+            if (controller instanceof MatchController) {
+                Platform.runLater(() -> ((MatchController) controller).populateProfile(strings));
+            } else if (controller instanceof ChatController) {
+                Platform.runLater(() -> ((ChatController) controller).populateProfile(strings));
+            }
         }
     }
 }
