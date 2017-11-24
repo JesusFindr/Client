@@ -19,8 +19,11 @@ public class LoginController implements Controller {
         client = Client.getInstance();
     }
 
+    private String username;
+
     @FXML
     private ImageView errorLogo;
+
 
     @FXML
     private TextField usernameField;
@@ -37,6 +40,7 @@ public class LoginController implements Controller {
     @FXML
     void onLogin(ActionEvent event) {
 
+        username = usernameField.getText();
         if (emptyFields()) {
             errorLogo.setVisible(true);
             return;
@@ -73,5 +77,9 @@ public class LoginController implements Controller {
         sound.stop();
         sound.close();
         System.out.println("closed sound");
+    }
+
+    public String getUsername() {
+        return username;
     }
 }

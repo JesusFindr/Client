@@ -3,18 +3,18 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.TextFlow?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.jesusfindr.controller.ChatController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.jesusfindr.controller.ChatController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
@@ -28,9 +28,9 @@
          </image>
       </ImageView>
       <ScrollPane layoutX="504.0" layoutY="172.0" prefHeight="256.0" prefWidth="244.0">
-        <content>
-          <AnchorPane fx:id="chatPane" minHeight="0.0" minWidth="0.0" prefHeight="264.0" prefWidth="254.0" style="-fx-background-color: White;" />
-        </content>
+         <content>
+            <TextArea fx:id="chatWindow" onKeyPressed="#sendMessage" prefHeight="255.0" prefWidth="242.0" />
+         </content>
       </ScrollPane>
       <VBox layoutX="51.0" layoutY="418.0" prefHeight="115.0" prefWidth="301.0">
          <children>
@@ -60,7 +60,7 @@
             <Image url="@/hearts.png" />
          </image>
       </ImageView>
-      <TextField fx:id="chatWritter" alignment="TOP_LEFT" layoutX="504.0" layoutY="431.0" prefHeight="55.0" prefWidth="244.0" promptText="Send message" />
+      <TextField fx:id="chatWritter" alignment="TOP_LEFT" layoutX="504.0" layoutY="431.0" onKeyPressed="#sendMessage" prefHeight="55.0" prefWidth="244.0" promptText="Send message" />
       <ImageView fitHeight="96.0" fitWidth="285.0" layoutX="512.0">
          <image>
             <Image url="@/logo.png" />
@@ -68,5 +68,6 @@
       </ImageView>
       <Button fx:id="logoutButton" layoutX="681.0" layoutY="506.0" mnemonicParsing="false" onAction="#logout" text="Log Out" />
       <Button fx:id="unmatchButton" layoutX="504.0" layoutY="506.0" mnemonicParsing="false" onAction="#unmatch" text="Unmatch?" />
+      <TextFlow prefHeight="200.0" prefWidth="200.0" />
    </children>
 </Pane>

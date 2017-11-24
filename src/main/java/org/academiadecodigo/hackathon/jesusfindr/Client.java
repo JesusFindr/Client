@@ -117,5 +117,10 @@ public final class Client {
                 }
             });
         }
+
+        else {
+
+            sendMessage(string);
+        }
     }
 }
