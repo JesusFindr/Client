@@ -17,7 +17,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.academiadecodigo.hackathon.jesusfindr.Client</mainClass>
+                            <mainClass>org.academiadecodigo.hackathon.jesusfindr.ClientUI</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
