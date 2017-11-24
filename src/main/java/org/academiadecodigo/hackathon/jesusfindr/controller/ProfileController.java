@@ -16,8 +16,9 @@ public class ProfileController implements Controller {
 
     private Client client;
 
-    public ProfileController(){
-        client = new Client();
+    public void initialize(){
+
+        client = Client.getInstance();
     }
 
     @FXML

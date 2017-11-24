@@ -11,8 +11,9 @@ public class LoginController implements Controller {
 
     private Client client;
 
-    public LoginController() {
-        client = new Client();
+    public void initialize() {
+
+        client = Client.getInstance();
     }
 
     @FXML

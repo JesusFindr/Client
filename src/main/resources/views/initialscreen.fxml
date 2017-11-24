@@ -5,21 +5,21 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="welcomeView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.jesusfindr.controller.InitalScreenController">
+<Pane fx:id="welcomeView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.jesusfindr.controller.InitialScreenController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@../../../../../../resources/jesusInitialScreen.jpeg" />
+            <Image url="@/jesusInitialScreen.jpeg" />
          </image>
       </ImageView>
       <ImageView fitHeight="96.0" fitWidth="285.0" layoutX="512.0">
          <image>
-            <Image url="@../../../../../../resources/logo.png" />
+            <Image url="@/logo.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="47.0" fitWidth="266.0" layoutX="522.0" layoutY="96.0">
          <image>
-            <Image url="@../../../../../../resources/logo2.png" />
+            <Image url="@/logo2.png" />
          </image>
       </ImageView>
       <Button fx:id="loginButton" layoutX="605.0" layoutY="287.0" mnemonicParsing="false" onAction="#onLogin" text="Login" />
