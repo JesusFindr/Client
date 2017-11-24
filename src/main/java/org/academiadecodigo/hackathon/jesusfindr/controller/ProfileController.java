@@ -102,6 +102,11 @@ public class ProfileController implements Controller {
             return;
         }
 
+        if (sexList.getSelectionModel().getSelectedIndex() != 1){
+            playSound("/sounds/oh-my-god.wav");
+            return;
+        }
+
         String backHair = "True";
 
         if (backHairNo.isSelected()) {
