@@ -54,7 +54,10 @@ public class MatchController implements Controller {
     private Button chatButton;
 
     @FXML
-    private GridPane profiles;
+    private GridPane profile;
+
+    @FXML
+    private ImageView matchFound;
 
     @FXML
     void startChat(ActionEvent event) {
@@ -72,6 +75,8 @@ public class MatchController implements Controller {
     }
 
     public void populateProfile(String[] profile) {
+        System.out.println("populating profile");
+        matchFound.setVisible(true);
         usernameShow.setText(profile[1]);
         ageShow.setText(profile[2]);
         sexShow.setText(profile[3]);
@@ -81,7 +86,7 @@ public class MatchController implements Controller {
         spiritAnimalShow.setText(profile[7]);
         eyebrowShow.setText(profile[8]);
         backHairShow.setText(profile[9]);
-        profiles.setVisible(true);
+        this.profile.setVisible(true);
     }
 }
 

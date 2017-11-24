@@ -120,6 +120,7 @@ public final class Client {
         }
 
         if (strings[0].equals("profile")) {
+            System.out.println("received profile");
             Platform.runLater(() -> {
                 ((MatchController) controller).populateProfile(strings);
             });
