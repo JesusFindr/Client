@@ -1,5 +1,6 @@
 package org.academiadecodigo.hackathon.jesusfindr;
 
+import javafx.application.Platform;
 import org.academiadecodigo.hackathon.jesusfindr.controller.Controller;
 import org.academiadecodigo.hackathon.jesusfindr.controller.LoginController;
 
@@ -72,22 +73,24 @@ public final class Client {
         @Override
         public void run() {
 
-            while (true) {
 
-                String receivedString = null;
-                try {
+            String receivedString = null;
+            try {
+                while (true) {
                     receivedString = in.readLine();
+                    System.out.println("READ " + receivedString);
 
-                    if (receivedString != null) {
+                    if (receivedString == null) {
 
-                        messageHandler(receivedString);
+                        break;
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                    messageHandler(receivedString);
 
-                System.out.println(receivedString);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+
         }
     }
 
@@ -95,13 +98,14 @@ public final class Client {
 
         String[] strings = string.split("#€");
 
-        System.out.println(string);
+        System.out.println("HANDLER " + string);
 
         if (strings[0].equals("login") && strings[1].equals("success")) {
 
             System.out.println("About to change view");
 
-            ((LoginController) controller).loadMatches();
+            //((LoginController) controller).loadMatches();
+            Platform.runLater(() -> Navigation.getInstance().loadScreen("matchScreen"));
         }
     }
 }

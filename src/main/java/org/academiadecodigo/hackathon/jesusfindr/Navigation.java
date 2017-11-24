@@ -23,6 +23,7 @@ public final class Navigation {
     private Stage stage;
 
     private Navigation() {
+
     }
 
     public static synchronized Navigation getInstance() {
@@ -71,6 +72,7 @@ public final class Navigation {
     }
 
     private void setScene(Scene scene) {
+
 
         stage.setScene(scene);
         stage.show();

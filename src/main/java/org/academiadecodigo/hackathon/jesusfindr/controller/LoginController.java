@@ -50,7 +50,10 @@ public class LoginController implements Controller {
     }
 
     public void loadMatches() {
+
+
         Navigation.getInstance().loadScreen("matchScreen");
+
     }
 
     boolean emptyFields() {
