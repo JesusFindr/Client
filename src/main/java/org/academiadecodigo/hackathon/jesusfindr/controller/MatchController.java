@@ -10,7 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import org.academiadecodigo.hackathon.jesusfindr.Navigation;
 
-
 public class MatchController implements Controller {
 
     @FXML
