@@ -7,9 +7,22 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Client {
+public final class Client {
 
-    PrintWriter out;
+    public static Client client = null;
+    private PrintWriter out;
+
+    private Client() {
+    }
+
+    public static Client getInstance() {
+
+        if (client == null) {
+
+            client = new Client();
+        }
+        return client;
+    }
 
     public void start() {
 
