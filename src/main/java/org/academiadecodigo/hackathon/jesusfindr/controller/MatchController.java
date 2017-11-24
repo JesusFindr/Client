@@ -52,7 +52,7 @@ public class MatchController implements Controller {
     @FXML
     void startChat(ActionEvent event) {
 
-        Navigation.getInstance().loadScreen("chat");
+        Navigation.getInstance().loadScreen("chatscreen");
     }
 
     @FXML

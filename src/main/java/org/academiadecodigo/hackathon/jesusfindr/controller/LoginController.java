@@ -52,7 +52,7 @@ public class LoginController implements Controller {
     public void loadMatches() {
 
 
-        Navigation.getInstance().loadScreen("matchScreen");
+        Navigation.getInstance().loadScreen("matchscreen");
 
     }
 
