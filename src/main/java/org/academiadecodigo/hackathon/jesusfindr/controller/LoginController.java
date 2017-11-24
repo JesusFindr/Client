@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.image.ImageView;
 import org.academiadecodigo.hackathon.jesusfindr.Client;
 import org.academiadecodigo.hackathon.jesusfindr.Navigation;
+import org.academiadecodigo.hackathon.jesusfindr.Security;
 
 public class LoginController implements Controller {
 
@@ -38,8 +39,8 @@ public class LoginController implements Controller {
             errorLogo.setVisible(true);
             return;
         }
-
-        client.sendMessage(usernameField + "$€" + passwordField);
+        client.sendMessage("login#€" + usernameField.getText() + "#€" + Security.getHash(passwordField.getText()));
+        client.setController(this);
     }
 
     @FXML
@@ -48,8 +49,8 @@ public class LoginController implements Controller {
         Navigation.getInstance().loadScreen("createprofile");
     }
 
-    void loadMatches() {
-        Navigation.getInstance().loadScreen("matches");
+    public void loadMatches() {
+        Navigation.getInstance().loadScreen("matchScreen");
     }
 
     boolean emptyFields() {

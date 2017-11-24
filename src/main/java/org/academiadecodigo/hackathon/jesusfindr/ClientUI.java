@@ -16,6 +16,7 @@ public class ClientUI extends Application {
 
         Navigation.getInstance().setStage(primaryStage);
         Navigation.getInstance().loadScreen("initialscreen");
+        Client.getInstance().start();
 
     }
 }
