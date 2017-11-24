@@ -1,7 +1,7 @@
 package org.academiadecodigo.hackathon.jesusfindr.controller;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.scene.Group;
+import javafx.scene.image.ImageView;
 import org.academiadecodigo.hackathon.jesusfindr.Client;
 import org.academiadecodigo.hackathon.jesusfindr.Navigation;
 
@@ -9,14 +9,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import org.academiadecodigo.hackathon.jesusfindr.Security;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Observable;
 
 public class ProfileController implements Controller {
 
@@ -57,7 +52,7 @@ public class ProfileController implements Controller {
     private Button registerButton;
 
     @FXML
-    private Label errorLabel;
+    private ImageView errorImage;
 
     public void initialize(){
 
@@ -102,7 +97,7 @@ public class ProfileController implements Controller {
     void registerUser(ActionEvent event) {
 
         if (emptyFields()){
-            errorLabel.setVisible(true);
+            errorImage.setVisible(true);
             return;
         }
 
