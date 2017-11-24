@@ -9,7 +9,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import org.academiadecodigo.hackathon.jesusfindr.Security;
 
 public class ProfileController implements Controller {
 
@@ -51,9 +51,10 @@ public class ProfileController implements Controller {
 
     @FXML
     void registerUser(ActionEvent event) {
+
         /*
         client.sendMessage("username#" + usernameField);
-        client.sendMessage("password#" + passwordField);
+        client.sendMessage("password#" + Security.getHash(passwordField.getText()));
         client.sendMessage("age#" + ageField);
         client.sendMessage("sex#" + sexList);
         client.sendMessage("shoe_size#" + shoeSizeList);
@@ -68,6 +69,23 @@ public class ProfileController implements Controller {
         }
         */
 
+        if (emptyFields()){
+            errorLabel.setVisible(true);
+            return;
+        }
+
         Navigation.getInstance().loadScreen("matches");
+    }
+
+    private boolean emptyFields() {
+
+        return usernameField.getText().length() == 0 ||
+                passwordField.getText().length() == 0 ||
+                ageField.getText().length() == 0 ||
+                spiritAnimalField.getText().length() == 0 ||
+                sexList.getSelectionModel().isSelected(0) ||
+                shoeSizeList.getSelectionModel().isSelected(0) ||
+                bellyList.getSelectionModel().isSelected(0) ||
+                browsList.getSelectionModel().isSelected(0);
     }
 }
