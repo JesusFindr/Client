@@ -76,7 +76,6 @@ public class LoginController implements Controller {
 
         sound.stop();
         sound.close();
-        System.out.println("closed sound");
     }
 
     public String getUsername() {

@@ -152,6 +152,5 @@ public class ProfileController implements Controller {
 
         sound.stop();
         sound.close();
-        System.out.println("closed sound");
     }
 }

@@ -3,6 +3,7 @@ package org.academiadecodigo.hackathon.jesusfindr;
 import javafx.application.Platform;
 import org.academiadecodigo.hackathon.jesusfindr.controller.Controller;
 import org.academiadecodigo.hackathon.jesusfindr.controller.LoginController;
+import org.academiadecodigo.hackathon.jesusfindr.controller.MatchController;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -47,7 +48,6 @@ public final class Client {
             thread.start();
 
         } catch (IOException e) {
-            System.out.println("Server is not available, try again later.");
         }
     }
 
@@ -118,9 +118,10 @@ public final class Client {
             });
         }
 
-        else {
-
-            sendMessage(string);
+        if (strings[0].equals("profile")) {
+            Platform.runLater(() -> {
+                ((MatchController) controller).populateProfile(strings);
+            });
         }
     }
 }
