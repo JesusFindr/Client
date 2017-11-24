@@ -15,7 +15,7 @@ public class LoginController implements Controller {
     private Hyperlink register;
 
     @FXML
-    private Label errorLabel;
+    private Label errorImage;
 
     @FXML
     private TextField usernameField;
